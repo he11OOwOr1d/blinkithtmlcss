@@ -87,6 +87,6 @@ signbutton.addEventListener('click', ()=>{
     infoarr.push(info)
     localStorage.setItem("Infoarray", JSON.stringify(infoarr))
     
-    window.location.href = 'http://127.0.0.1:3000/login.html'
+    window.location.href = 'https://he11oowor1d.github.io/blinkithtmlcss/login.html'
   }
 })

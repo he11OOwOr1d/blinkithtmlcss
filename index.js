@@ -1,6 +1,9 @@
 let logintext = document.querySelector('.log-text')
 let logindiv = document.querySelector('.login')
 let storedData = localStorage.getItem('loginarr');
+let carosel = document.querySelector('.carousel')
+let carouseldiv = document.createElement('div')
+
 const parseStd = JSON.parse(storedData)
 let divi = document.createElement('div')
 if (parseStd){
@@ -13,7 +16,7 @@ if (parseStd){
   `
   logindiv.appendChild(divi);
 }
-console.log(parseStd)
+
 let logoutbutton = logindiv.querySelector('.logOut')
 let acc = logindiv.querySelector('.account')
 
@@ -59,3 +62,4 @@ acc.addEventListener('mouseover',(event)=>{
         document.body.removeChild(tooltipDiv);
     }, { once: true });
 })
+

@@ -59,7 +59,7 @@ logbutton.addEventListener('click', ()=>{
         'data': matchedUser
       }
       localStorage.setItem('loginarr', JSON.stringify(logininfo))
-      window.location.href = 'http://127.0.0.1:3000/index.html'
+      window.location.href = 'https://he11oowor1d.github.io/blinkithtmlcss/index.html'
     }
     else{
       alert('No matching user found')
