@@ -6,11 +6,11 @@
   width: 8rem;
   border-right: 1px solid rgb(237, 235, 235);
   padding-right: 3rem;
-  margin-bottom: 0px;
+  margin-bottom: 0rem;
   padding-top: 1.1rem;
   align-items: center;
-
 }
+
 .location{
   margin-top: 1.3rem;
   padding-left: 1.4rem;
@@ -19,7 +19,7 @@
 .navbar{
   display: flex;
   padding-left: 2.3rem;
-  margin-bottom: 0px;
+  margin-bottom: 0rem;
   border-bottom: 0.5px solid rgb(237, 235, 235);
   align-items: center;
 
@@ -27,20 +27,21 @@
 
 .del-text{
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: 0rem;
 }
 .loc-text{
-  margin-top: 0px;
+  margin-top: 0rem;
 }
 
 .searchbox{
+
   padding-top: 1rem;
   padding-left: 1.4rem;
   display: flex;
   align-items: center;
   padding-bottom: 0.8rem;
   border: 1px solid black;
-  height: 20px;
+  height: 1rem;
   margin-top: 1.2rem;
   border-radius: 1rem;
   margin-left: 0.9rem;
@@ -48,6 +49,7 @@
   align-items: center;
 }
 .inptex{
+  outline: none;
   width: 40rem;
   font-size: large;
   border: none;
@@ -76,16 +78,16 @@
 }
 .icon{
   display: flex;
-  margin-right: 5px;
+  margin-right: 1rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
   padding-left: 0.3rem;
- /* top, right, bottom, left */
+
 }
 .banner-logo{
-  width: 92vw;
+  width: 92%;
   margin-left: 3rem;
-  margin-top: 0px;
+  margin-top: 0rem;
 }
 .Categorycard{
   display: flex;
@@ -183,13 +185,13 @@
 
 .pehlaul{
   list-style: none;
-  padding-right: 80px;
-  padding-left: 0px;
+  padding-right: 5rem;
+  padding-left: 0rem;
 }
 
 .dusraul{
   list-style: none;
-  padding: 0px;
+  padding: 0rem;
 }
 .usefulfirdiv{
   display: flex;
@@ -205,12 +207,12 @@
 }
 .cat-pehlaul{
   list-style: none;
-  padding-left: 0px;
-  padding-right: 200px;
+  padding-left: 0rem;
+  padding-right: 11rem;
 }
 .cat-dusraul{
   list-style: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 .cat-first-li{
   width: max-content;
@@ -250,4 +252,86 @@
 }
 .app-social{
   justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar{
+    padding-left: 1rem;
+    flex-wrap: wrap;
+  }
+  .logo{
+    width: 6rem;
+    padding-right: 1.5rem;
+  }
+  .location{
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .searchbox{
+    width: 50%;
+    margin-left: 0.5rem;
+  }
+  .inptex{
+    width: 100%;
+    font-size: medium;
+  }
+  .log-text{
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+  .mycart{
+    margin-left: 1rem;
+    width: 6rem;
+    font-size: 0.8rem;
+  }
+  .banner-logo{
+    width: 95% ;
+    margin-left: 1rem;
+  }
+  .Categorycard{
+    margin-left: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pharma, .pet, .baby {
+    width: 18rem;
+    margin-bottom: 1rem;
+  }
+  .row1, .row2{
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .fst-row{
+    width: 7rem;
+    margin: 0.5rem;
+  }
+  .carousel{
+    margin-left: 1rem;
+  }
+  .carousel-item{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  .item-container{
+    min-width: 9rem;
+  }
+  .footer{
+    margin-left: 1rem;
+  }
+  .foot-first-div{
+    flex-direction: column;
+  }
+  .copyandapp{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .various-categorycards{
+    width: 650px;
+  }
 }
