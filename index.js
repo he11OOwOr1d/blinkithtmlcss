@@ -26,23 +26,30 @@ logoutbutton.addEventListener('click',()=>{
   localStorage.removeItem('loginarr')
 })
 
-acc.addEventListener('click', () => {
-  console.log('click')
-  let tooltipDiv = document.createElement('div');
-  tooltipDiv.innerHTML = `
-    <p>Name: ${parseStd.data['namehe']}</p>
-    <p>Email: ${parseStd.data['email']}</p>
-    <p>My Orders</p>
-    <p>Saved Address</p>
-    <p>FAQ</p>
-    <p>Account Privacy</p>
-  `;
+let tooltipDiv = document.createElement('div');
+tooltipDiv.innerHTML = `
+  <p>Name: ${parseStd.data['namehe']}</p>
+  <p>Email: ${parseStd.data['email']}</p>
+  <p>My Orders</p>
+  <p>Saved Address</p>
+  <p>FAQ</p>
+  <p>Account Privacy</p>
+`;
+logindiv.appendChild(tooltipDiv);
+
+acc.addEventListener('click', (event) => {
+  event.stopPropagation(); 
   
-  
+  if (tooltipDiv.style.display === 'none') {
+    tooltipDiv.style.display = 'block';
+  } else {
+    tooltipDiv.style.display = 'none';
+  }
 });
 
-// let textdiv = document.createElement('div')
-// let info = document.createElement('p')
-// info.innerText = 'hi'
-// textdiv.appendChild(p)
-// hidiv.appendChild(textdiv)
+document.addEventListener('click', (event) => {
+  if (!tooltipDiv.contains(event.target) && event.target !== acc) {
+    tooltipDiv.style.display = 'none';
+  }
+});
+
