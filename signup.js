@@ -1,11 +1,11 @@
-const names = document.querySelector('.name')
-const pass = document.querySelector('.pass')
-const email = document.querySelector('.email')
-const signbutton = document.querySelector('.Signup')
+let names = document.querySelector('.name')
+let pass = document.querySelector('.pass')
+let email = document.querySelector('.email')
+let signbutton = document.querySelector('.Signup')
 
 let infoarr = []
 
-const local = localStorage.getItem('Infoarray')
+let local = localStorage.getItem('Infoarray')
 
 if (local !== null) {
   try {
@@ -19,18 +19,13 @@ if (local !== null) {
 }
 
 function checkname(){
-  if (names.value === ""){
-    alert('info daalo sir')
+  if (names.value === "" || names.value === null  ){
     return false
   }
   return true
 }
 function checkmail(){
-  if (!email.value.includes('@email.com')){
-    alert('check your email')
-    return false
-  }
-  return true
+  return email.value.endsWith('@email.com')
 }
 function checkpass(){
   const passlist = [
@@ -45,7 +40,7 @@ function checkpass(){
   let special = false
 
   for (let i=0; i < pass.value.length; i++){
-    const char = pass.value[i];
+    let char = pass.value[i];
     
     if (passlist[0].includes(char)) {
       small = true;
@@ -57,30 +52,55 @@ function checkpass(){
       special = true;
     }
   }
-  if (!small){
-    alert('Enter a small alphabet')
-  }
-  if (!big){
-    alert('Enter a capital alphabet')
-  }
-  if (!no){
-    alert('Enter a number')
-  }
-  if (!special){
-    alert('Enter a special character')
+  // if (!small){
+  //   alert('Enter a small alphabet')
+  // }
+  // if (!big){
+  //   alert('Enter a capital alphabet')
+  // }
+  // if (!no){
+  //   alert('Enter a number')
+  // }
+  // if (!special){
+  //   alert('Enter a special character')
+  // }
+  if (pass.value){
+    return true
   }
 
-  return small && big && no && special;
+
+  // return small && big && no && special;
 }
 
-signbutton.addEventListener('click', ()=>{
-  const isNameValid = checkname()
-  const isEmailValid = checkmail()
-  const isPassValid = checkpass()
+signbutton.addEventListener('click', (e)=>{
+  e.preventDefault()
 
-  if (isEmailValid && isNameValid && isPassValid){
+  let low = email.value.toLowerCase();
+
+  let isNameValid = checkname()
+  let isEmailValid = checkmail()
+  let isPassValid = checkpass()
+
+  if (!isEmailValid && !isNameValid && !isPassValid){
+    alert('Enter valid info')
+    return
+  }
+
+  if (!isEmailValid && !isPassValid){
+    alert('Enter valid email and password')
+    return
+  }
+  if (!isNameValid && !isEmailValid){
+    alert('Enter valid name and email')
+    return
+  }
+  if (!isPassValid && !isNameValid){
+    alert('Enter valid password and name')
+    return
+  }
+
     let info = {
-      'email':email.value,
+      'email':low,
       'pass':pass.value,
       'namehe':names.value
     }
@@ -88,5 +108,9 @@ signbutton.addEventListener('click', ()=>{
     localStorage.setItem("Infoarray", JSON.stringify(infoarr))
     
     window.location.href = 'https://he11oowor1d.github.io/blinkithtmlcss/login.html'
-  }
+  
+  
+  
 })
+
+
