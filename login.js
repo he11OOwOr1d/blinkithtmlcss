@@ -22,6 +22,7 @@ if (local !== null) {
 
 function checkmail(){
   let isFound = false
+  email.value = email.value.toLowerCase()
   for (let i=0; i<len; i++){
     if (email.value == parseLoc[i].email){
       isFound = true
@@ -49,12 +50,12 @@ function checkpass(){
 }
 
 logbutton.addEventListener('click', ()=>{
-  let low = email.value.toLowerCase();
+
   const isEmailValid = checkmail()
   const isPassValid = checkpass()
 
   if (isEmailValid && isPassValid){
-    let matchedUser = parseLoc.find(item => item['email'] === low && item['pass'] === pass.value)
+    let matchedUser = parseLoc.find(item => item['email'] == email.value && item['pass'] == pass.value)
     if (matchedUser){
       let logininfo = {
         'data': matchedUser
