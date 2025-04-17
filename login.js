@@ -54,7 +54,7 @@ logbutton.addEventListener('click', ()=>{
   const isPassValid = checkpass()
 
   if (isEmailValid && isPassValid){
-    let matchedUser = parseLoc.find(item => item['email'] == low && item['pass'] == pass.value)
+    let matchedUser = parseLoc.find(item => item['email'] === low && item['pass'] === pass.value)
     if (matchedUser){
       let logininfo = {
         'data': matchedUser
