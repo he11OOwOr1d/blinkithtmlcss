@@ -12,11 +12,10 @@ let loginarr =[]
 if (local !== null) {
   try {
     const data = JSON.parse(local)
-    // Ensure data is an array; if not, reset to empty array
     loginarr = Array.isArray(data) ? data : []
   } catch (e) {
     console.error('Error parsing localStorage data:', e)
-    loginarr = [] // Reset to empty array if JSON is invalid
+    loginarr = [] 
   }
 }
 
